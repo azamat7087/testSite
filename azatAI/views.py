@@ -1,14 +1,16 @@
 from django.shortcuts import render, redirect
 from django.views import View
+from rest_framework.response import Response
+from rest_framework.views import APIView
+
 from .models import *
 from .forms import *
-import random
-# Create your views here.
-used_hex_id = []
+from .serializers import *
+
 
 class Test(View):
     def get(self, request):
-        users = Users.objects.all()
+        users = Users.objects.filter(is_active=True)
         return render(request, 'azatAI/test.html', context={'users': users})
 
 class CreateUser(View):
@@ -27,4 +29,11 @@ class CreateUser(View):
     def get(self, request):
         form = UserForm()
         return render(request, 'azatAI/testForm.html', context={'form': form})
+
+
+class UsersView(APIView):
+    def get(self, request):
+        users = Users.objects.filter(is_active=True)
+        serializer = UsersSerializer(users,many=True)
+        return Response(serializer.data)
 

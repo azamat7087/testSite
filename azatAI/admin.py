@@ -7,7 +7,7 @@ from .models import *
 class UsersAdmin(admin.ModelAdmin):
 
     list_display = ['phone_number']
-    exclude = ['id']
+    exclude = ['id', 'update_date', 'delete_date', 'is_active']
 
 
 

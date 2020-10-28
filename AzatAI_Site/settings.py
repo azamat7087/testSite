@@ -45,6 +45,11 @@ INSTALLED_APPS = [
 
     'azatAI',
     'phonenumber_field',
+    'rest_framework',
+
+
+    # 'ckeditor',
+    # 'ckeditor_uploader',
 
     # 'allauth',
     # 'allauth.account',
