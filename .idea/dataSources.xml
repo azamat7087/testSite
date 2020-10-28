@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="Django default" uuid="bd0b938c-e78d-4872-85f7-5e0d4d2b2010">
+    <data-source source="LOCAL" name="Django default" uuid="cd5eaac4-2e49-4db2-bb12-4a5751aeba95">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <imported>true</imported>
       <remarks>$PROJECT_DIR$/AzatAI_Site/settings.py</remarks>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://127.0.0.1:3306/azat_ai_db</jdbc-url>
+      <jdbc-url>jdbc:mysql://127.0.0.1:3306/Azat_AI_test_db</jdbc-url>
       <driver-properties>
         <property name="serverTimezone" value="UTC" />
       </driver-properties>

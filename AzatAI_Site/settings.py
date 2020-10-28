@@ -41,9 +41,21 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # 'django.contrib.sites',
+
     'azatAI',
-    'allauth',
     'phonenumber_field',
+
+    # 'allauth',
+    # 'allauth.account',
+    # 'allauth.socialaccount',
+    #
+    # 'allauth.socialaccount.providers.facebook',
+    # 'allauth.socialaccount.providers.google',
+    # 'allauth.socialaccount.providers.mailru',
+    # 'allauth.socialaccount.providers.telegram',
+    # 'allauth.socialaccount.providers.vk',
+
 
 ]
 
@@ -75,6 +87,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'social_django.context_processors.backends',
+
             ],
         },
     },
@@ -90,14 +103,15 @@ WSGI_APPLICATION = 'AzatAI_Site.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'azat_ai_db',
+        'NAME': 'Azat_AI_test_db',
         'USER': 'root',
         'PASSWORD': '13467985',
         'HOST': 'localhost',
         'PORT': '3306',
-
+        'OPTIONS': {'charset': 'utf8mb4'},
     }
 }
+
 
 
 # Password validation
@@ -141,3 +155,4 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
