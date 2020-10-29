@@ -24,13 +24,6 @@ class Users(models.Model):
     def __str__(self):
         return str(self.phone_number)
 
-    # def update_delete_date(self, user):
-    #     self.delete_date = user.update_date + timedelta(days=30)
-    #     print(datetime.now())
-    #     print(self.delete_date)
-    #     if datetime.now() > self.delete_date:
-    #         self.is_active = False
-
     def set_id(self, ids):
         while (True):
             id = get_hex_id()
@@ -50,22 +43,14 @@ class Users(models.Model):
     def save(self, *args, **kwargs):
         try:
             user = Users.objects.get(id=self.id)
-            self.delete_date = user.update_date + timedelta(days=30)
-            print(str(self.delete_date))
+            self.delete_date = self.update_date + timedelta(days=30)
             datetime_object = datetime.strptime(str(self.delete_date), '%Y-%m-%d')
-            if datetime.now() > datetime_object:
+            if datetime.now() + timedelta(days=35) > datetime_object:
                 self.is_active = False
 
         except Exception:
             pass
 
-        # if not self.id:
-        #     try:
-        #         ids = Users.objects.all()
-        #         self.set_id(self, ids)
-        #     except Exception:
-        #         pass
-        #
         if not self.id:
             while(True):
                 id = get_hex_id()
@@ -82,10 +67,7 @@ class Users(models.Model):
                     raise FullMemoryException
                     break
 
-
-
         super(Users, self).save(*args, **kwargs)
-
 
 
 class FullMemoryException(Exception):
