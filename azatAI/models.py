@@ -17,8 +17,10 @@ def get_deadline():
 class Users(models.Model):
     id = models.CharField(max_length=8, primary_key=True, unique=True, null=False)
     phone_number = PhoneNumberField(unique=True, blank=False)
+    registration_date = models.DateField(auto_now_add=True)
+    last_login = models.DateField(auto_now=True)
     update_date = models.DateField(auto_now=True)
-    delete_date = models.DateField(default=get_deadline)
+    session_expire = models.DateField(default=get_deadline)
     is_active = models.BooleanField(default=True)
 
     def __str__(self):
@@ -27,7 +29,6 @@ class Users(models.Model):
     def set_id(self, ids):
         while (True):
             id = get_hex_id()
-
             used_hex_id = []
 
             for i in ids:
@@ -42,9 +43,8 @@ class Users(models.Model):
 
     def save(self, *args, **kwargs):
         try:
-            user = Users.objects.get(id=self.id)
-            self.delete_date = self.update_date + timedelta(days=30)
-            datetime_object = datetime.strptime(str(self.delete_date), '%Y-%m-%d')
+            self.session_expire = self.update_date + timedelta(days=30)
+            datetime_object = datetime.strptime(str(self.session_expire), '%Y-%m-%d')
             if datetime.now() + timedelta(days=35) > datetime_object:
                 self.is_active = False
 
@@ -74,3 +74,16 @@ class FullMemoryException(Exception):
     pass
 
 
+class Device(models.Model):
+    device_id = models.CharField(max_length=8, unique=True, null=True)
+    device_os = models.CharField(max_length=50)
+    login_date = models.DateField(auto_now_add=True)
+    ip = models.GenericIPAddressField()
+    user = models.ForeignKey('Users', null=True, on_delete=models.CASCADE, default="")
+
+    def __str__(self):
+        return self.device_id
+
+    def save(self):
+        #TODO
+        pass

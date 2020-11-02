@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ab83c1e5-3331-4bc7-b24a-ef342a86b061" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/azatAI/serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AzatAI_Site/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/AzatAI_Site/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AzatAI_Site/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/AzatAI_Site/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/azatAI/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/azatAI/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/azatAI/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/azatAI/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/azatAI/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/azatAI/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/azatAI/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/azatAI/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +38,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../test/venv/Include/test.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -117,7 +112,11 @@
       <workItem from="1603686737251" duration="5885000" />
       <workItem from="1603694738787" duration="5402000" />
       <workItem from="1603798282358" duration="2015000" />
-      <workItem from="1603812284696" duration="28907000" />
+      <workItem from="1603812284696" duration="32870000" />
+      <workItem from="1603954107139" duration="1231000" />
+      <workItem from="1603967396686" duration="2326000" />
+      <workItem from="1604210185783" duration="1849000" />
+      <workItem from="1604285917825" duration="1705000" />
     </task>
     <servers />
   </component>
@@ -133,32 +132,32 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="109" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1603702580754" />
-    <state x="463" y="117" key="FileChooserDialogImpl" timestamp="1606560135238">
+    <state x="463" y="117" key="FileChooserDialogImpl" timestamp="1604211689572">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="117" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1606560135238" />
-    <state width="1322" height="174" key="GridCell.Tab.0.bottom" timestamp="1606560403322">
+    <state x="463" y="117" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1604211689572" />
+    <state width="1322" height="174" key="GridCell.Tab.0.bottom" timestamp="1604212045555">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="174" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1606560403322" />
-    <state width="1322" height="174" key="GridCell.Tab.0.center" timestamp="1606560403322">
+    <state width="1322" height="174" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1604212045555" />
+    <state width="1322" height="174" key="GridCell.Tab.0.center" timestamp="1604212045555">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="174" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1606560403322" />
-    <state width="1322" height="174" key="GridCell.Tab.0.left" timestamp="1606560403322">
+    <state width="1322" height="174" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1604212045555" />
+    <state width="1322" height="174" key="GridCell.Tab.0.left" timestamp="1604212045555">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="174" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1606560403322" />
-    <state width="1322" height="174" key="GridCell.Tab.0.right" timestamp="1606560403322">
+    <state width="1322" height="174" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1604212045555" />
+    <state width="1322" height="174" key="GridCell.Tab.0.right" timestamp="1604212045555">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="174" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1606560403322" />
+    <state width="1322" height="174" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1604212045555" />
     <state x="184" y="0" key="SettingsEditor" timestamp="1603858144339">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1603858144339" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/AzatAI_Site$test.coverage" NAME="test Coverage Results" MODIFIED="1604113388188" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../test/venv/Include" />
+    <SUITE FILE_PATH="coverage/AzatAI_Site$test.coverage" NAME="test Coverage Results" MODIFIED="1604211718529" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../test/venv/Include" />
   </component>
 </project>
