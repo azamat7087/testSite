@@ -3,7 +3,16 @@ import time
 from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
 import random
+
 # Create your models here.
+
+# def get_client_ip(request):
+#     x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+#     if x_forwarded_for:
+#         ip = x_forwarded_for.split(',')[0]
+#     else:
+#         ip = request.META.get('REMOTE_ADDR')
+#     return ip
 
 def get_hex_id():
     id = random.randint(1, 4294967295)
@@ -85,6 +94,5 @@ class Device(models.Model):
     def __str__(self):
         return self.device_id
 
-    # def save(self):
-    #     #TODO
-    #     pass
+    # def save(self, *args, **kwargs):
+    #     self.ip = get_client_ip(self.request)

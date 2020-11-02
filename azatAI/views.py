@@ -9,13 +9,14 @@ from .forms import *
 from .serializers import *
 
 
+
 class Test(View):
     def get(self, request):
         users = Users.objects.filter(is_active=True)
         return render(request, 'azatAI/test.html', context={'users': users})
 
-class CreateUser(View):
 
+class CreateUser(View):
     def post(self, request):
         bound_form = UserForm(request.POST)
 

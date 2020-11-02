@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ab83c1e5-3331-4bc7-b24a-ef342a86b061" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azatAI/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/azatAI/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/azatAI/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/azatAI/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/azatAI/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/azatAI/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azatAI/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/azatAI/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
