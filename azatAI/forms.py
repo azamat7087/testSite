@@ -10,3 +10,4 @@ class UserForm(forms.ModelForm):
         widgets = {
             'phone_number': forms.TextInput(attrs={'class': 'form-control'}),
         }
+

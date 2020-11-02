@@ -45,7 +45,9 @@ INSTALLED_APPS = [
 
     'azatAI',
     'phonenumber_field',
+    # 'phone_login',
     'rest_framework',
+    'rest_framework.authtoken',
 
 
     # 'ckeditor',
@@ -63,6 +65,14 @@ INSTALLED_APPS = [
 
 
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+    )
+}
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -137,6 +147,12 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# AUTHENTICATION_BACKENDS = ('core.backends.PhoneModelBackend',)
+
+# AUTHENTICATION_BACKENDS = [
+#     'phone_login.backends.phone_backend.PhoneBackend',
+#     'django.contrib.auth.backends.ModelBackend'
+# ]
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
@@ -161,3 +177,12 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
+# SENDSMS_BACKEND = 'myapp.mysmsbackend.SmsBackend' #(defaults to 'sendsms.backends.console.SmsBackend')
+# SENDSMS_FROM_NUMBER = "+XXxxxxxxxxxx"
+# SENDSMS_ACCOUNT_SID = 'ACXXXXXXXXXXXXXX'
+# SENDSMS_AUTH_TOKEN = 'xxxxxxxx'
+#
+# PHONE_LOGIN_ATTEMPTS = 10
+# PHONE_LOGIN_OTP_LENGTH = 6
+# PHONE_LOGIN_OTP_HASH_ALGORITHM = 'sha256'
+# PHONE_LOGIN_DEBUG = True

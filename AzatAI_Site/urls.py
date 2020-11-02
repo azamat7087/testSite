@@ -23,6 +23,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('azatAI.urls')),
     path('api-auth/', include('rest_framework.urls')),
+    # path('phone_login/', include(('phone_login.urls', 'phone_login'), namespace='phone_login'),),
+
 ]
 
 

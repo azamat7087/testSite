@@ -24,6 +24,13 @@ def get_deadline():
     return datetime.now() + timedelta(days=30)
 
 
+class UsedID(models.Model):
+    used = models.CharField(max_length=8, unique=True)
+
+    def __str__(self):
+        return self.used
+
+
 class Users(models.Model):
     id = models.CharField(max_length=8, primary_key=True, unique=True, null=False)
     phone_number = PhoneNumberField(unique=True, blank=False)
@@ -36,20 +43,23 @@ class Users(models.Model):
     def __str__(self):
         return str(self.phone_number)
 
-    def set_id(self, ids):
-        while (True):
-            id = get_hex_id()
-            used_hex_id = []
-
-            for i in ids:
-                used_hex_id.append(i.id)
-            if id not in used_hex_id:
-                self.id = id
-                break
-
-            if len(used_hex_id) > 4294967295:
-                raise FullMemoryException
-                break
+    # def set_id(self, ids):
+    #     while (True):
+    #         id = get_hex_id()
+    #         UsedID.objects.create(id)
+    #         used_hex_id = []
+    #
+    #         used_hex_id = UsedID.objects.all()
+    #
+    #         for i in ids:
+    #             used_hex_id.append(i.id)
+    #         if id not in used_hex_id:
+    #             self.id = id
+    #             break
+    #
+    #         if len(used_hex_id) > 4294967295:
+    #             raise FullMemoryException
+    #             break
 
     def save(self, *args, **kwargs):
         try:
@@ -62,14 +72,17 @@ class Users(models.Model):
             pass
 
         if not self.id:
+
             while(True):
                 id = get_hex_id()
-                ids = Users.objects.all()
+                ids = UsedID.objects.all()
                 used_hex_id = []
-
                 for i in ids:
-                    used_hex_id.append(i.id)
+                    used_hex_id.append(i.used)
+                print(used_hex_id)
+                print(id)
                 if id not in used_hex_id:
+                    UsedID.objects.create(used=id)
                     self.id = id
                     break
 
@@ -86,7 +99,7 @@ class FullMemoryException(Exception):
 
 class Device(models.Model):
     device_id = models.CharField(max_length=8, unique=True, null=False,primary_key=True)
-    device_os = models.CharField(max_length=50)
+    device_os = models.CharField(max_length=8)
     login_date = models.DateField(auto_now_add=True)
     ip = models.GenericIPAddressField(null=True)
     user = models.ForeignKey(Users, null=True, on_delete=models.CASCADE, default="",related_name='devices')
