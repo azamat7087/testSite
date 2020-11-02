@@ -10,5 +10,10 @@ class UsersAdmin(admin.ModelAdmin):
     exclude = ['id', 'update_date', 'session_expire','registration_date', 'is_active']
 
 
+class DeviceAdmin(admin.ModelAdmin):
 
+    list_display = ['login_date']
+
+
+admin.site.register(Device,DeviceAdmin)
 admin.site.register(Users, UsersAdmin)
