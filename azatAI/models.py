@@ -80,7 +80,7 @@ class Device(models.Model):
     device_os = models.CharField(max_length=50)
     login_date = models.DateField(auto_now_add=True)
     ip = models.GenericIPAddressField(null=True)
-    user = models.ForeignKey(Users, null=True, on_delete=models.CASCADE, default="",related_name='device')
+    user = models.ForeignKey(Users, null=True, on_delete=models.CASCADE, default="",related_name='devices')
 
     def __str__(self):
         return self.device_id

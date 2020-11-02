@@ -108,7 +108,7 @@ WSGI_APPLICATION = 'AzatAI_Site.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'Azat_AI_test_db',
+        'NAME': 'Azat_AI_db_test',
         'USER': 'root',
         'PASSWORD': '13467985',
         'HOST': 'localhost',
