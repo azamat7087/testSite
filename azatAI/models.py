@@ -6,13 +6,7 @@ import random
 
 # Create your models here.
 
-# def get_client_ip(request):
-#     x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
-#     if x_forwarded_for:
-#         ip = x_forwarded_for.split(',')[0]
-#     else:
-#         ip = request.META.get('REMOTE_ADDR')
-#     return ip
+
 
 def get_hex_id():
     id = random.randint(1, 4294967295)
@@ -30,6 +24,21 @@ class UsedID(models.Model):
     def __str__(self):
         return self.used
 
+def set_id():
+    while (True):
+        id = get_hex_id()
+        ids = UsedID.objects.all()
+        used_hex_id = []
+        for i in ids:
+            used_hex_id.append(i.used)
+        if id not in used_hex_id:
+            UsedID.objects.create(used=id)
+            return id
+            break
+
+        if len(used_hex_id) > 4294967295:
+            raise FullMemoryException
+            break
 
 class Users(models.Model):
     id = models.CharField(max_length=8, primary_key=True, unique=True, null=False)
@@ -43,25 +52,8 @@ class Users(models.Model):
     def __str__(self):
         return str(self.phone_number)
 
-    # def set_id(self, ids):
-    #     while (True):
-    #         id = get_hex_id()
-    #         UsedID.objects.create(id)
-    #         used_hex_id = []
-    #
-    #         used_hex_id = UsedID.objects.all()
-    #
-    #         for i in ids:
-    #             used_hex_id.append(i.id)
-    #         if id not in used_hex_id:
-    #             self.id = id
-    #             break
-    #
-    #         if len(used_hex_id) > 4294967295:
-    #             raise FullMemoryException
-    #             break
-
     def save(self, *args, **kwargs):
+
         try:
             self.session_expire = self.update_date + timedelta(days=30)
             datetime_object = datetime.strptime(str(self.session_expire), '%Y-%m-%d')
@@ -72,24 +64,9 @@ class Users(models.Model):
             pass
 
         if not self.id:
+            self.id = set_id()
 
-            while(True):
-                id = get_hex_id()
-                ids = UsedID.objects.all()
-                used_hex_id = []
-                for i in ids:
-                    used_hex_id.append(i.used)
-                print(used_hex_id)
-                print(id)
-                if id not in used_hex_id:
-                    UsedID.objects.create(used=id)
-                    self.id = id
-                    break
-
-                if len(used_hex_id) > 4294967295:
-                    raise FullMemoryException
-                    break
-
+        # Device.objects.create(self)
         super(Users, self).save(*args, **kwargs)
 
 
@@ -102,10 +79,13 @@ class Device(models.Model):
     device_os = models.CharField(max_length=8)
     login_date = models.DateField(auto_now_add=True)
     ip = models.GenericIPAddressField(null=True)
-    user = models.ForeignKey(Users, null=True, on_delete=models.CASCADE, default="",related_name='devices')
+    user = models.ForeignKey(Users, null=True, on_delete=models.CASCADE, default="", related_name='devices')
 
     def __str__(self):
         return self.device_id
 
-    # def save(self, *args, **kwargs):
-    #     self.ip = get_client_ip(self.request)
+    def save(self, *args, **kwargs):
+        self.device_id = set_id()
+        self.device_os = set_id()
+
+        super(Device, self).save(*args, **kwargs)

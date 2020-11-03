@@ -2,123 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ab83c1e5-3331-4bc7-b24a-ef342a86b061" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/azatAI/backends.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/azatAI/templates/azatAI/Login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AzatAI_Site/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/AzatAI_Site/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AzatAI_Site/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/AzatAI_Site/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/azatAI/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/azatAI/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/azatAI/migrations/0009_auto_20201026_1502.py" beforeDir="false" afterPath="$PROJECT_DIR$/azatAI/migrations/0009_auto_20201026_1502.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/azatAI/migrations/0010_auto_20201026_1507.py" beforeDir="false" afterPath="$PROJECT_DIR$/azatAI/migrations/0010_auto_20201026_1507.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/azatAI/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/azatAI/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/django_phonenumber_field-5.0.0.dist-info/AUTHORS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/django_phonenumber_field-5.0.0.dist-info/INSTALLER" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/django_phonenumber_field-5.0.0.dist-info/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/django_phonenumber_field-5.0.0.dist-info/METADATA" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/django_phonenumber_field-5.0.0.dist-info/RECORD" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/django_phonenumber_field-5.0.0.dist-info/REQUESTED" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/django_phonenumber_field-5.0.0.dist-info/WHEEL" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/django_phonenumber_field-5.0.0.dist-info/top_level.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/formfields.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/formfields.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/ar/LC_MESSAGES/django.mo" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/ar/LC_MESSAGES/django.po" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/az/LC_MESSAGES/django.mo" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/az/LC_MESSAGES/django.po" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/bn/LC_MESSAGES/django.mo" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/bn/LC_MESSAGES/django.po" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/cs/LC_MESSAGES/django.mo" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/cs/LC_MESSAGES/django.mo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/cs/LC_MESSAGES/django.po" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/cs/LC_MESSAGES/django.po" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/da/LC_MESSAGES/django.mo" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/da/LC_MESSAGES/django.mo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/da/LC_MESSAGES/django.po" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/da/LC_MESSAGES/django.po" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/de/LC_MESSAGES/django.mo" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/de/LC_MESSAGES/django.mo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/de/LC_MESSAGES/django.po" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/de/LC_MESSAGES/django.po" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/eo/LC_MESSAGES/django.mo" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/eo/LC_MESSAGES/django.mo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/eo/LC_MESSAGES/django.po" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/eo/LC_MESSAGES/django.po" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/es/LC_MESSAGES/django.mo" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/es/LC_MESSAGES/django.po" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/fi/LC_MESSAGES/django.mo" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/fi/LC_MESSAGES/django.mo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/fi/LC_MESSAGES/django.po" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/fi/LC_MESSAGES/django.po" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/fr/LC_MESSAGES/django.mo" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/fr/LC_MESSAGES/django.mo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/fr/LC_MESSAGES/django.po" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/fr/LC_MESSAGES/django.po" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/he/LC_MESSAGES/django.mo" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/he/LC_MESSAGES/django.po" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/hy/LC_MESSAGES/django.mo" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/hy/LC_MESSAGES/django.po" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/it/LC_MESSAGES/django.mo" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/it/LC_MESSAGES/django.mo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/it/LC_MESSAGES/django.po" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/it/LC_MESSAGES/django.po" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/ko/LC_MESSAGES/django.mo" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/ko/LC_MESSAGES/django.po" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/nb/LC_MESSAGES/django.mo" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/nb/LC_MESSAGES/django.po" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/nl/LC_MESSAGES/django.mo" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/nl/LC_MESSAGES/django.po" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/pl/LC_MESSAGES/django.mo" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/pl/LC_MESSAGES/django.mo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/pl/LC_MESSAGES/django.po" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/pl/LC_MESSAGES/django.po" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/pt/LC_MESSAGES/django.mo" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/pt/LC_MESSAGES/django.mo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/pt/LC_MESSAGES/django.po" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/pt/LC_MESSAGES/django.po" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/pt_BR/LC_MESSAGES/django.mo" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/pt_BR/LC_MESSAGES/django.po" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/ro/LC_MESSAGES/django.mo" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/ro/LC_MESSAGES/django.po" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/ru/LC_MESSAGES/django.mo" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/ru/LC_MESSAGES/django.mo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/ru/LC_MESSAGES/django.po" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/ru/LC_MESSAGES/django.po" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/sk/LC_MESSAGES/django.mo" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/sk/LC_MESSAGES/django.mo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/sk/LC_MESSAGES/django.po" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/sk/LC_MESSAGES/django.po" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/sv/LC_MESSAGES/django.mo" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/sv/LC_MESSAGES/django.po" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/tr/LC_MESSAGES/django.mo" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/tr/LC_MESSAGES/django.po" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/uk/LC_MESSAGES/django.mo" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/uk/LC_MESSAGES/django.po" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/uk_UA/LC_MESSAGES/django.mo" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/uk_UA/LC_MESSAGES/django.po" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/zh_Hans/LC_MESSAGES/django.mo" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/locale/zh_Hans/LC_MESSAGES/django.po" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/modelfields.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/modelfields.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/phonenumber.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/phonenumber.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/serializerfields.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/validators.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/validators.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/widgets.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumber_field/widgets.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_AG.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_AG.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_AI.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_AI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_AS.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_AS.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_BB.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_BB.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_BM.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_BM.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_BS.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_BS.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_CA.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_CA.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_CI.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_CI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_DM.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_DM.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_DO.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_DO.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_GB.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_GB.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_GD.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_GD.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_GG.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_GG.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_GU.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_GU.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_IR.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_IR.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_JE.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_JE.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_JM.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_JM.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_JP.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_JP.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_KE.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_KE.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_KN.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_KN.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_KY.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_KY.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_LC.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_LC.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_MP.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_MP.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_MS.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_MS.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_NP.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_NP.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_PK.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_PK.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_PR.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_PR.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_SA.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_SA.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_SX.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_SX.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_TC.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_TC.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_TT.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_TT.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_US.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_US.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_VC.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_VC.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_VG.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_VG.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_VI.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_VI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_VN.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_VN.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_WS.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/data/region_WS.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/phonenumberutil.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/phonenumberutil.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/shortdata/region_JP.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/phonenumbers/shortdata/region_JP.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azatAI/templates/azatAI/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/azatAI/templates/azatAI/test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azatAI/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/azatAI/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azatAI/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/azatAI/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,8 +22,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -231,6 +122,7 @@
       <workItem from="1603967396686" duration="2326000" />
       <workItem from="1604210185783" duration="1849000" />
       <workItem from="1604285917825" duration="8258000" />
+      <workItem from="1604372968955" duration="1932000" />
     </task>
     <servers />
   </component>

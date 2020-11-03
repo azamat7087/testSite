@@ -11,3 +11,12 @@ class UserForm(forms.ModelForm):
             'phone_number': forms.TextInput(attrs={'class': 'form-control'}),
         }
 
+
+class LogForm(forms.ModelForm):
+    class Meta:
+        model = Users
+        fields = ['phone_number']
+
+        widgets = {
+            'phone_number': forms.TextInput(attrs={'class': 'form-control'}),
+        }

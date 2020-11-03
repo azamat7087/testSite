@@ -147,12 +147,10 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-# AUTHENTICATION_BACKENDS = ('core.backends.PhoneModelBackend',)
-
-# AUTHENTICATION_BACKENDS = [
-#     'phone_login.backends.phone_backend.PhoneBackend',
-#     'django.contrib.auth.backends.ModelBackend'
-# ]
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'core.backends.PhoneModelBackend',
+]
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/

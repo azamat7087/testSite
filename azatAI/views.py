@@ -4,16 +4,48 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 import sys
 
+from .backends import PhoneModelBackend
 from .models import *
 from .forms import *
 from .serializers import *
 
+def get_client_ip(request):
+    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+    if x_forwarded_for:
+        ip = x_forwarded_for.split(',')[0]
+    else:
+        ip = request.META.get('REMOTE_ADDR')
+    return ip
+
+
+class LogUser(View):
+
+    def post(self, request):
+        bound_form = LogForm(request.POST)
+
+        if bound_form.is_valid():
+            user = PhoneModelBackend.authenticate(phone_number=bound_form.data['phone_number'])
+            
+            if user is not None:
+                # the password verified for the user
+                if user.is_active:
+                    print("User is valid, active and authenticated")
+                else:
+                    print("The password is valid, but the account has been disabled!")
+            else:
+                # the authentication system was unable to verify the username and password
+                print("The username and password were incorrect.")
+        return redirect("test_url")
+
+    def get(self, request):
+        form = LogForm()
+        return render(request, 'azatAI/Login.html', context={'form': form})
 
 
 class Test(View):
     def get(self, request):
         users = Users.objects.filter(is_active=True)
-        return render(request, 'azatAI/test.html', context={'users': users})
+        return render(request, 'azatAI/test.html', context={'users': users, 'request': request})
 
 
 class CreateUser(View):
