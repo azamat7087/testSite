@@ -13,7 +13,7 @@ class UsersAdmin(admin.ModelAdmin):
 class DeviceAdmin(admin.ModelAdmin):
 
     list_display = ['device_id']
-    exclude = []
+    exclude = ['device_id']
 
 admin.site.register(Device,DeviceAdmin)
 admin.site.register(Users, UsersAdmin)

@@ -1,13 +1,23 @@
+import platform
 from django.shortcuts import render, redirect
 from django.views import View
 from rest_framework.response import Response
 from rest_framework.views import APIView
 import sys
-
-from .backends import PhoneModelBackend
+from django.contrib.auth import login, authenticate
 from .models import *
 from .forms import *
 from .serializers import *
+import re
+
+'''Functions'''
+
+def get_header(request):
+    regex = re.compile('^HTTP_')
+    head = dict((regex.sub('', header), value) for (header, value)
+                in request.META.items() if header.startswith('HTTP_'))
+    return head
+
 
 def get_client_ip(request):
     x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
@@ -18,52 +28,64 @@ def get_client_ip(request):
     return ip
 
 
-class LogUser(View):
-
-    def post(self, request):
-        bound_form = LogForm(request.POST)
-
-        if bound_form.is_valid():
-            user = PhoneModelBackend.authenticate(phone_number=bound_form.data['phone_number'])
-            
-            if user is not None:
-                # the password verified for the user
-                if user.is_active:
-                    print("User is valid, active and authenticated")
-                else:
-                    print("The password is valid, but the account has been disabled!")
-            else:
-                # the authentication system was unable to verify the username and password
-                print("The username and password were incorrect.")
-        return redirect("test_url")
-
-    def get(self, request):
-        form = LogForm()
-        return render(request, 'azatAI/Login.html', context={'form': form})
+def str_to_class(classname):
+    return getattr(sys.modules[__name__], classname)
 
 
-class Test(View):
+'''Views'''
+
+class Main(View):
     def get(self, request):
         users = Users.objects.filter(is_active=True)
-        return render(request, 'azatAI/test.html', context={'users': users, 'request': request})
+        device = Device.objects.get(user=request.user.id)
+        os = request.user_agent.browser.family
+        device_id = device.device_id
+        ip = get_client_ip(request)
+        head = get_header(request)
+        return render(request, 'azatAI/Main.html', context={'users': users,
+                                                            'request': request,
+                                                            'os': os,
+                                                            'header': head,
+                                                            'ip': ip,
+                                                            'device_id': device_id,
+                                                            })
 
 
 class CreateUser(View):
     def post(self, request):
-        bound_form = UserForm(request.POST)
+        bound_form = RegistrationForm(request.POST)
 
         if bound_form.is_valid():
 
             bound_form.save()
+            phone_number = bound_form.cleaned_data.get('phone_number')
+            raw_password = bound_form.cleaned_data.get('password1')
+            account = authenticate(phone_number=phone_number, password=raw_password)
 
-            return redirect('test_url')
+            login(request, account)
 
-        return render(request, 'azatAI/testForm.html', context={'form': bound_form})
+            head = get_header(request)
+
+            ip = get_client_ip(request)
+            os = str(request.user_agent.os.family) + " " + str(request.user_agent.os.version_string)
+            user = Users.objects.get(id__iexact=request.user.id)
+
+            Device.objects.create(ip=ip, device_os=os, user=user)
+
+
+
+            print(request.user_agent.device.family)
+
+            return redirect('main_url')
+
+        return render(request, 'azatAI/registration.html', context={'form': bound_form})
 
     def get(self, request):
-        form = UserForm()
-        return render(request, 'azatAI/testForm.html', context={'form': form})
+        form = RegistrationForm()
+        return render(request, 'azatAI/registration.html', context={'form': form})
 
+
+'''Api Interfaces'''
 
 class UsersView(APIView):
     def get(self, request, ver):
@@ -82,6 +104,3 @@ class DeviceView(APIView):
 
         return Response(serializer.data)
 
-
-def str_to_class(classname):
-    return getattr(sys.modules[__name__], classname)

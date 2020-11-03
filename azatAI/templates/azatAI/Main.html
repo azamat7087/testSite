@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+</head>
+<body>
+     {% for user in users %}
+         <p>
+            {{ user.phone_number }}
+         </p>
+     {% endfor %}
+
+    <p>
+       USER: {{ request.user.phone_number}}
+    </p>
+
+    <p>
+       OS:   {{ os }}
+    </p>
+
+     <p>
+         IP ADDRESS: {{ ip }}
+     </p>
+
+    <p>
+        HTTP header: {{ header }}
+    </p>
+
+    <p>
+        DEVICE ID: {{ device_id }}
+    </p>
+</body>
+</html>

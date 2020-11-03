@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     # 'phone_login',
     'rest_framework',
     'rest_framework.authtoken',
-
+    'django_user_agents',
 
     # 'ckeditor',
     # 'ckeditor_uploader',
@@ -82,12 +82,15 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_user_agents.middleware.UserAgentMiddleware',
 ]
 
 ROOT_URLCONF = 'AzatAI_Site.urls'
 
 PHONENUMBER_DB_FORMAT = 'NATIONAL'
 PHONENUMBER_DEFAULT_REGION = 'KZ'
+
+AUTH_USER_MODEL = 'azatAI.Users'
 
 TEMPLATES = [
     {
@@ -118,7 +121,7 @@ WSGI_APPLICATION = 'AzatAI_Site.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'Azat_AI_db_test',
+        'NAME': 'azatat_db',
         'USER': 'root',
         'PASSWORD': '13467985',
         'HOST': 'localhost',
@@ -149,8 +152,17 @@ AUTH_PASSWORD_VALIDATORS = [
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
-    'core.backends.PhoneModelBackend',
+
 ]
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+        'LOCATION': '127.0.0.1:11211',
+    }
+}
+
+USER_AGENTS_CACHE = 'default'
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
@@ -175,12 +187,3 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
-# SENDSMS_BACKEND = 'myapp.mysmsbackend.SmsBackend' #(defaults to 'sendsms.backends.console.SmsBackend')
-# SENDSMS_FROM_NUMBER = "+XXxxxxxxxxxx"
-# SENDSMS_ACCOUNT_SID = 'ACXXXXXXXXXXXXXX'
-# SENDSMS_AUTH_TOKEN = 'xxxxxxxx'
-#
-# PHONE_LOGIN_ATTEMPTS = 10
-# PHONE_LOGIN_OTP_LENGTH = 6
-# PHONE_LOGIN_OTP_HASH_ALGORITHM = 'sha256'
-# PHONE_LOGIN_DEBUG = True
