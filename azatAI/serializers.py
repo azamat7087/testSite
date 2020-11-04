@@ -11,12 +11,14 @@ class UsersSerializer_v1(serializers.ModelSerializer):
 class UsersSerializer_v2(serializers.ModelSerializer):
     class Meta:
         model = Users
-        fields = ('id', 'phone_number', 'registration_date')
+        fields = ('id', 'phone_number', 'date_joined')
+
 
 class DeviceSer(serializers.ModelSerializer):
     class Meta:
         model = Device
-        fields =  ("__all__")
+        fields = ("__all__")
+
 
 class UsersSerializer_v3(serializers.ModelSerializer):
     devices = DeviceSer(many=True)

@@ -72,9 +72,8 @@ class CreateUser(View):
 
             Device.objects.create(ip=ip, device_os=os, user=user)
 
+            request.session.set_expiry(2592000)
 
-
-            print(request.user_agent.device.family)
 
             return redirect('main_url')
 

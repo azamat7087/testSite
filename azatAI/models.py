@@ -79,10 +79,10 @@ class Users(AbstractBaseUser):
     id = models.CharField(max_length=8, primary_key=True, unique=True, null=False)
     user_name = models.CharField(max_length=30,default="")
     phone_number = PhoneNumberField(unique=True, blank=False)
-    date_joined = models.DateField(verbose_name='date_joined', auto_now_add=True)
-    last_login = models.DateField(verbose_name='last_login', auto_now=True)
-    last_update = models.DateField(auto_now=True)
-    session_expire = models.DateField(default=get_deadline)
+    date_joined = models.DateTimeField(verbose_name='date_joined', auto_now_add=True)
+    last_login = models.DateTimeField(verbose_name='last_login', auto_now=True)
+    last_update = models.DateTimeField(auto_now=True)
+    session_expire = models.DateTimeField(default=get_deadline)
     is_admin = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
@@ -105,15 +105,8 @@ class Users(AbstractBaseUser):
 
 
     def save(self, *args, **kwargs):
-
         try:
             self.session_expire = self.last_update + timedelta(days=30)
-            datetime_object = datetime.strptime(str(self.session_expire), '%Y-%m-%d')
-            if datetime.now() > datetime_object:
-                if self.is_admin == False:
-                    pass
-                    # Users.objects.get(phone_number=self.phone_number).delete()
-
         except Exception:
             pass
         if not self.id:
