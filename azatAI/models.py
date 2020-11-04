@@ -121,7 +121,7 @@ class FullMemoryException(Exception):
 class Device(models.Model):
     device_id = models.CharField(max_length=8, unique=True, null=False,primary_key=True)
     device_os = models.CharField(max_length=50)
-    login_date = models.DateField(auto_now_add=True)
+    login_date = models.DateTimeField(auto_now_add=True)
     ip = models.GenericIPAddressField(null=True)
     user = models.ForeignKey(Users, null=True, on_delete=models.CASCADE, default="", related_name='devices')
 
