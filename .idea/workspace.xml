@@ -3,12 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ab83c1e5-3331-4bc7-b24a-ef342a86b061" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AzatAI_Site/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/AzatAI_Site/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/azatAI/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/azatAI/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/azatAI/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/azatAI/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/azatAI/templates/azatAI/Login.html" beforeDir="false" afterPath="$PROJECT_DIR$/azatAI/templates/azatAI/Login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/azatAI/templates/azatAI/Main.html" beforeDir="false" afterPath="$PROJECT_DIR$/azatAI/templates/azatAI/Main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/azatAI/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/azatAI/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azatAI/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/azatAI/utils.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/azatAI/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/azatAI/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -43,7 +39,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../OperationSystems/venv/Include/2 Week - 2 RK/test.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../myBlog" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -147,7 +143,7 @@
       <workItem from="1604285917825" duration="8258000" />
       <workItem from="1604372968955" duration="17916000" />
       <workItem from="1604465343291" duration="18472000" />
-      <workItem from="1604567805576" duration="1333000" />
+      <workItem from="1604567805576" duration="3843000" />
     </task>
     <servers />
   </component>
@@ -163,10 +159,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="109" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1603702580754" />
-    <state x="463" y="117" key="FileChooserDialogImpl" timestamp="1604469416219">
+    <state x="463" y="117" key="FileChooserDialogImpl" timestamp="1604569669025">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="117" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1604469416219" />
+    <state x="463" y="117" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1604569669025" />
     <state width="1322" height="64" key="GridCell.Tab.0.bottom" timestamp="1604559965023">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

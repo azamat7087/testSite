@@ -9,7 +9,7 @@ from .models import *
 from .forms import *
 from .serializers import *
 import re
-
+from .utils import *
 '''Functions'''
 
 def get_header(request):
@@ -95,35 +95,14 @@ class Login(View):
         return render(request, 'azatAI/Login.html', context={'form': form})
 
 
-class CreateUser(View):
-    def post(self, request):
-        bound_form = RegistrationForm(request.POST)
-
-        if bound_form.is_valid():
-
-            bound_form.save()
-            phone_number = bound_form.cleaned_data.get('phone_number')
-            raw_password = bound_form.cleaned_data.get('password1')
-            account = authenticate(phone_number=phone_number, password=raw_password)
-
-            login(request, account)
-
-            ip = get_client_ip(request)
-            os = str(request.user_agent.os.family) + " " + str(request.user_agent.os.version_string)
-            user = Users.objects.get(id__iexact=request.user.id)
-
-            Device.objects.create(ip=ip, device_os=os, user=user)
-
-            request.session.set_expiry(2592000)
+class CreateUser(RegistrationMixin, View):
+    obj_form = RegistrationForm
+    obj = 'phone_number'
 
 
-            return redirect('main_url')
-
-        return render(request, 'azatAI/registration.html', context={'form': bound_form})
-
-    def get(self, request):
-        form = RegistrationForm()
-        return render(request, 'azatAI/registration.html', context={'form': form})
+class CreateUser_OBJ(RegistrationMixin, View):
+    obj_form = RegistrationForm_OBJ
+    obj = 'id'
 
 
 '''Api Interfaces'''
