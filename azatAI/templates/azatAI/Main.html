@@ -3,8 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Test</title>
+    <style>
+   #buttns a {
+       border: 2px solid black;
+       padding: 10px;
+   }
+  </style>
 </head>
 <body>
+    <p id="buttns" class="btn-primary ">
+
+        {% if request.user.is_authenticated %}
+            <p>Hello, {{ request.user.phone_number }}</p>
+            <a href="{% url 'logout_url' %}">Log out</a>
+        {% else %}
+            <a href="{% url 'log_user_url' %}"> Login </a>
+            <a href="{% url 'create_user_form_url' %}">Registration</a>
+        {% endif %}
+    </p>
      {% for user in users %}
          <p>
             {{ user.phone_number }}
@@ -18,6 +34,10 @@
     <p>
        OS:   {{ os }}
     </p>
+
+      <p>
+         BROWSER: {{ browser }}
+     </p>
 
      <p>
          IP ADDRESS: {{ ip }}

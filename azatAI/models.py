@@ -8,7 +8,6 @@ import random
 # Create your models here.
 
 
-
 def get_hex_id():
     id = random.randint(1, 4294967295)
     hex_id = str(hex(id))[2:]
@@ -52,9 +51,7 @@ class UserManager(BaseUserManager):
         user = self.model(
             phone_number=phone_number,
             user_name=user_name,
-            # session_expire=session_expire,
-            # last_update=last_update,
-            # id=id
+
         )
 
         user.set_password(password)

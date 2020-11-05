@@ -4,7 +4,7 @@ from django.views import View
 from rest_framework.response import Response
 from rest_framework.views import APIView
 import sys
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate, logout
 from .models import *
 from .forms import *
 from .serializers import *
@@ -34,21 +34,65 @@ def str_to_class(classname):
 
 '''Views'''
 
+
 class Main(View):
     def get(self, request):
         users = Users.objects.filter(is_active=True)
-        device = Device.objects.get(user=request.user.id)
-        os = request.user_agent.browser.family
-        device_id = device.device_id
-        ip = get_client_ip(request)
-        head = get_header(request)
-        return render(request, 'azatAI/Main.html', context={'users': users,
-                                                            'request': request,
-                                                            'os': os,
-                                                            'header': head,
-                                                            'ip': ip,
-                                                            'device_id': device_id,
-                                                            })
+        if request.user.is_authenticated and request.user.is_admin == False:
+            device = Device.objects.get(user=request.user.id)
+            os = str(request.user_agent.os.family) + " " + request.user_agent.os.version_string
+            browser = str(request.user_agent.browser.family) + " " + request.user_agent.browser.version_string
+            device_id = device.device_id
+            ip = get_client_ip(request)
+            head = get_header(request)
+            return render(request, 'azatAI/Main.html', context={'users': users,
+                                                                'request': request,
+                                                                'os': os,
+                                                                'header': head,
+                                                                'ip': ip,
+                                                                'device_id': device_id,
+                                                                'browser': browser})
+        else:
+            return render(request, 'azatAI/Main.html', context={'users': users,
+                                                                'request': request})
+
+
+class Logout(View):
+    def get(self, request):
+        logout(request)
+        return redirect('main_url')
+
+
+class Login(View):
+    def post(self, request):
+        bound_form = LogForm(request.POST)
+
+        if bound_form.is_valid():
+            phone_number = request.POST['phone_number']
+            password = request.POST['password']
+            user = authenticate(phone_number=phone_number, password=password)
+
+            if user:
+                login(request, user)
+                user = Users.objects.get(phone_number=request.user.phone_number)
+                user.last_update = datetime.now()
+                user.last_login = datetime.now()
+                user.save()
+
+                request.session.set_expiry(2592000)
+                return redirect('main_url')
+
+            return redirect('main_url')
+
+        return render(request, 'azatAI/Login.html', context={'form': bound_form})
+
+    def get(self, request):
+        user = request.user
+        if user.is_authenticated:
+            return redirect('main_url')
+
+        form = LogForm
+        return render(request, 'azatAI/Login.html', context={'form': form})
 
 
 class CreateUser(View):
@@ -63,8 +107,6 @@ class CreateUser(View):
             account = authenticate(phone_number=phone_number, password=raw_password)
 
             login(request, account)
-
-            head = get_header(request)
 
             ip = get_client_ip(request)
             os = str(request.user_agent.os.family) + " " + str(request.user_agent.os.version_string)
@@ -85,6 +127,7 @@ class CreateUser(View):
 
 
 '''Api Interfaces'''
+
 
 class UsersView(APIView):
     def get(self, request, ver):
