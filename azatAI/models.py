@@ -7,6 +7,17 @@ import random
 
 # Create your models here.
 
+def get_time_pass():
+    time_pass = str(datetime.now())[14:16]
+    time_pass += str(int(time_pass) + 1) + time_pass
+    if len(time_pass) < 6:
+        time_pass1 = ""
+        for i in range(len(time_pass)):
+            time_pass1 += time_pass[i]
+            if i == 1:
+                time_pass1 += "0"
+        time_pass = time_pass1
+    return time_pass
 
 def get_hex_id():
     id = random.randint(1, 4294967295)
@@ -108,6 +119,8 @@ class Users(AbstractBaseUser):
             pass
         if not self.id:
             self.id = set_id()
+        if not self.phone_number:
+            self.password = get_time_pass()
         super(Users, self).save(*args, **kwargs)
 
 

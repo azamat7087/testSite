@@ -21,6 +21,7 @@
             <a href="{% url 'create_user_form_url' %}">Registration</a>
         {% endif %}
     </p>
+
      {% for user in users %}
          {% if user.phone_number != None%}
          <p>
@@ -58,6 +59,10 @@
 
     <p>
         DEVICE ID: {{ device_id }}
+    </p>
+
+    <p>
+        PASSWORD_OBJ: {{ need_password }}
     </p>
 
 

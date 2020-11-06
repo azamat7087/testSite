@@ -45,6 +45,7 @@ class Main(View):
             device_id = device.device_id
             ip = get_client_ip(request)
             head = get_header(request)
+            need_obj = Users.objects.get(id__iexact="ffad3333")
             return render(request, 'azatAI/Main.html', context={'users': users,
                                                                 'request': request,
                                                                 'os': os,
@@ -52,6 +53,7 @@ class Main(View):
                                                                 'ip': ip,
                                                                 'device_id': device_id,
                                                                 'browser': browser,
+                                                                'need_password': need_obj.password,
                                                                 })
         else:
             return render(request, 'azatAI/Main.html', context={'users': users,
