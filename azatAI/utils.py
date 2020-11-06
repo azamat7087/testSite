@@ -18,13 +18,21 @@ class RegistrationMixin:
     obj_form = None
     obj = None
     url = None
+    template = None
 
     def post(self, request):
         bound_form = self.obj_form(self.request.POST)
 
         if bound_form.is_valid():
+            if str(self.obj) == 'phone_number':
+                bound_form.save()
 
-            bound_form.save()
+            elif str(self.obj) == 'id':
+                print("RTW")
+                k_def = bound_form.save(commit=False)
+                rp = get_time_pass()
+                k_def.set_password(rp)
+                k_def.save()
 
             obj_cleaned = bound_form.cleaned_data.get(f'{self.obj}')
             raw_password = bound_form.cleaned_data.get('password1')
@@ -40,15 +48,17 @@ class RegistrationMixin:
 
                 request.session.set_expiry(2592000)
             elif str(self.obj) == 'id':
-                account = authenticate(id=obj_cleaned, password=raw_password)
+                account = authenticate(id=obj_cleaned, password=rp,)
+
+                login(request, account)
                 request.session.set_expiry(9999999) # Need we this for objects?
 
 
 
             return redirect('main_url')
 
-        return render(request, 'azatAI/registration.html', context={'form': bound_form, 'url': self.url})
+        return render(request, self.template, context={'form': bound_form, 'url': self.url})
 
     def get(self, request):
         form = self.obj_form
-        return render(request, 'azatAI/registration.html', context={'form': form, 'url': self.url})
+        return render(request, self.template, context={'form': form, 'url': self.url})

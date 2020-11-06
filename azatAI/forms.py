@@ -38,3 +38,22 @@ class LogForm(forms.ModelForm):
 
         if not authenticate(phone_number=phone_number, password=password):
             raise forms.ValidationError("Invalid login")
+
+
+class LogForm_OBJ(forms.ModelForm):
+
+    password = forms.CharField(label='Password', widget=forms.PasswordInput)
+
+    class Meta:
+        model = Users
+        fields = ['id', 'password']
+
+        widgets = {
+            'id': forms.TextInput(attrs={'class': 'form-control'}),
+        }
+    def clean(self):
+        id = self.cleaned_data['id']
+        password = self.cleaned_data['password']
+
+        if not authenticate(id=id, password=password):
+            raise forms.ValidationError("Invalid login")

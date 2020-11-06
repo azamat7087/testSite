@@ -9,5 +9,7 @@ urlpatterns = [
     path("users-api/<str:ver>/", UsersView.as_view(), name="user_view_url"),
     path("device-api/", DeviceView.as_view(), name="device-view-url"),
     path("logout/", Logout.as_view(), name="logout_url"),
-    path("login/", Login.as_view(), name="log_user_url")
+    path("login/", Login.as_view(), name="log_user_url"),
+    path("login/obj", Login_OBJ.as_view(), name="log_user_obj_url"),
+
 ]

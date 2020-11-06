@@ -12,6 +12,18 @@ import re
 from .utils import *
 '''Functions'''
 
+def get_time_pass():
+    time_pass = str(datetime.now())[14:16]
+    time_pass += str(int(time_pass) + 1) + time_pass
+    if len(time_pass) < 6:
+        time_pass1 = ""
+        for i in range(len(time_pass)):
+            time_pass1 += time_pass[i]
+            if i == 1:
+                time_pass1 += "0"
+        time_pass = time_pass1
+    return time_pass
+
 def get_header(request):
     regex = re.compile('^HTTP_')
     head = dict((regex.sub('', header), value) for (header, value)
@@ -38,14 +50,14 @@ def str_to_class(classname):
 class Main(View):
     def get(self, request):
         users = Users.objects.filter(is_active=True)
-        if request.user.is_authenticated and request.user.is_admin == False:
+        if request.user.is_authenticated and request.user.is_admin == False and request.user.phone_number:
             device = Device.objects.get(user=request.user.id)
             os = str(request.user_agent.os.family) + " " + request.user_agent.os.version_string
             browser = str(request.user_agent.browser.family) + " " + request.user_agent.browser.version_string
             device_id = device.device_id
+            obb = Users.objects.get(id__iexact='ffad5457')
             ip = get_client_ip(request)
             head = get_header(request)
-            need_obj = Users.objects.get(id__iexact="ffad3333")
             return render(request, 'azatAI/Main.html', context={'users': users,
                                                                 'request': request,
                                                                 'os': os,
@@ -53,7 +65,7 @@ class Main(View):
                                                                 'ip': ip,
                                                                 'device_id': device_id,
                                                                 'browser': browser,
-                                                                'need_password': need_obj.password,
+                                                                'obb': obb,
                                                                 })
         else:
             return render(request, 'azatAI/Main.html', context={'users': users,
@@ -97,16 +109,49 @@ class Login(View):
         form = LogForm
         return render(request, 'azatAI/Login.html', context={'form': form})
 
+class Login_OBJ(View):
+    def post(self, request):
+        bound_form = LogForm_OBJ(request.POST)
+
+        if bound_form.is_valid():
+            id = request.POST['id']
+            password = request.POST['password']
+            user = authenticate(id=id, password=password)
+
+            if user:
+                login(request, user)
+                user = Users.objects.get(id=request.user.id)
+                user.last_update = datetime.now()
+                user.last_login = datetime.now()
+                user.save()
+
+                request.session.set_expiry(2592000)
+                return redirect('main_url')
+
+            return redirect('main_url')
+
+        return render(request, 'azatAI/Login_OBJ.html', context={'form': bound_form})
+
+    def get(self, request):
+        user = request.user
+        if user.is_authenticated:
+            return redirect('main_url')
+
+        form = LogForm_OBJ
+        return render(request, 'azatAI/Login_OBJ.html', context={'form': form})
+
 
 class CreateUser(RegistrationMixin, View):
     obj_form = RegistrationForm
     obj = 'phone_number'
     url = 'create_user_form_url'
+    template = 'azatAI/registration.html'
 
 class CreateUser_OBJ(RegistrationMixin, View):
     obj_form = RegistrationForm_OBJ
     obj = 'id'
     url = 'create_user_OBJ_form_url'
+    template = 'azatAI/registration_obj.html'
 
 '''Api Interfaces'''
 

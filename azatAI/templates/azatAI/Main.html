@@ -14,7 +14,7 @@
     <p id="buttns" class="btn-primary ">
 
         {% if request.user.is_authenticated %}
-            <p>Hello, {{ request.user.phone_number }}</p>
+            <p>Hello, {{ request.user }}</p>
             <a href="{% url 'logout_url' %}">Log out</a>
         {% else %}
             <a href="{% url 'log_user_url' %}"> Login </a>
@@ -38,7 +38,7 @@
      {% endfor %}
 
     <p>
-       USER: {{ request.user.phone_number}}
+       USER: {{ request.user}}
     </p>
 
     <p>
@@ -62,7 +62,7 @@
     </p>
 
     <p>
-        PASSWORD_OBJ: {{ need_password }}
+        {{ obb.password }}
     </p>
 
 

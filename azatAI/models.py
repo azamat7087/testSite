@@ -96,14 +96,14 @@ class Users(AbstractBaseUser):
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
 
-    USERNAME_FIELD = 'phone_number'
+    USERNAME_FIELD = 'id'
 
     REQUIRED_FIELDS = ['user_name']
 
     objects = UserManager()
 
     def __str__(self):
-        return str(self.phone_number)
+        return str(self.id)
 
     def has_perm(self, perm, obj=None):
         return self.is_admin
@@ -119,8 +119,6 @@ class Users(AbstractBaseUser):
             pass
         if not self.id:
             self.id = set_id()
-        if not self.phone_number:
-            self.password = get_time_pass()
         super(Users, self).save(*args, **kwargs)
 
 
