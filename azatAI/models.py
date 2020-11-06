@@ -75,7 +75,7 @@ class UserManager(BaseUserManager):
 class Users(AbstractBaseUser):
     id = models.CharField(max_length=8, primary_key=True, unique=True, null=False)
     user_name = models.CharField(max_length=30,default="")
-    phone_number = PhoneNumberField(unique=True, blank=False)
+    phone_number = PhoneNumberField(unique=True, blank=False, null=True)
     date_joined = models.DateTimeField(verbose_name='date_joined', auto_now_add=True)
     last_login = models.DateTimeField(verbose_name='last_login', auto_now=True)
     last_update = models.DateTimeField(auto_now=True)

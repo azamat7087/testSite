@@ -51,7 +51,8 @@ class Main(View):
                                                                 'header': head,
                                                                 'ip': ip,
                                                                 'device_id': device_id,
-                                                                'browser': browser})
+                                                                'browser': browser,
+                                                                })
         else:
             return render(request, 'azatAI/Main.html', context={'users': users,
                                                                 'request': request})
@@ -98,12 +99,12 @@ class Login(View):
 class CreateUser(RegistrationMixin, View):
     obj_form = RegistrationForm
     obj = 'phone_number'
-
+    url = 'create_user_form_url'
 
 class CreateUser_OBJ(RegistrationMixin, View):
     obj_form = RegistrationForm_OBJ
     obj = 'id'
-
+    url = 'create_user_OBJ_form_url'
 
 '''Api Interfaces'''
 

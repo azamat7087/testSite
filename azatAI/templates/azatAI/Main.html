@@ -22,9 +22,18 @@
         {% endif %}
     </p>
      {% for user in users %}
+         {% if user.phone_number != None%}
          <p>
             {{ user.phone_number }}
          </p>
+
+         {% else %}
+
+         <p>
+            {{ user.id }}
+         </p>
+
+         {% endif %}
      {% endfor %}
 
     <p>
@@ -50,5 +59,7 @@
     <p>
         DEVICE ID: {{ device_id }}
     </p>
+
+
 </body>
 </html>

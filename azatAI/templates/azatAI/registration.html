@@ -5,7 +5,18 @@
     <title>Title</title>
 </head>
 <body>
- <form action="{% url 'create_user_form_url' %}"  method="post" enctype='multipart/form-data'>
+
+
+  {% if url == 'create_user_form_url' %}
+
+    <form action="{% url 'create_user_form_url' %}"  method="post" enctype='multipart/form-data'>
+
+  {% elif url == 'create_user_OBJ_form_url' %}
+
+       <form action="{% url 'create_user_OBJ_form_url' %}"  method="post" enctype='multipart/form-data'>
+
+  {% endif %}
+
         {% csrf_token %}
 
         {% for field in form %}
