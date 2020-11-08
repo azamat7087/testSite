@@ -28,16 +28,17 @@ class RegistrationMixin:
                 bound_form.save()
 
             elif str(self.obj) == 'id':
-                print("RTW")
+
                 k_def = bound_form.save(commit=False)
                 rp = get_time_pass()
                 k_def.set_password(rp)
                 k_def.save()
-
             obj_cleaned = bound_form.cleaned_data.get(f'{self.obj}')
             raw_password = bound_form.cleaned_data.get('password1')
             if str(self.obj) == 'phone_number':
-                account = authenticate(phone_number=obj_cleaned, password=raw_password)
+                user = Users.objects.get(phone_number__exact=obj_cleaned)
+
+                account = authenticate(id=user.id, password=raw_password)
                 login(request, account)
                 ip = get_client_ip(request)
                 os = str(self.request.user_agent.os.family) + " " + str(self.request.user_agent.os.version_string)

@@ -10,6 +10,7 @@ from .forms import *
 from .serializers import *
 import re
 from .utils import *
+from django.core.exceptions import *
 '''Functions'''
 
 def get_time_pass():
@@ -55,7 +56,6 @@ class Main(View):
             os = str(request.user_agent.os.family) + " " + request.user_agent.os.version_string
             browser = str(request.user_agent.browser.family) + " " + request.user_agent.browser.version_string
             device_id = device.device_id
-            obb = Users.objects.get(id__iexact='ffad5457')
             ip = get_client_ip(request)
             head = get_header(request)
             return render(request, 'azatAI/Main.html', context={'users': users,
@@ -65,7 +65,7 @@ class Main(View):
                                                                 'ip': ip,
                                                                 'device_id': device_id,
                                                                 'browser': browser,
-                                                                'obb': obb,
+
                                                                 })
         else:
             return render(request, 'azatAI/Main.html', context={'users': users,
@@ -82,22 +82,25 @@ class Login(View):
     def post(self, request):
         bound_form = LogForm(request.POST)
 
-        if bound_form.is_valid():
-            phone_number = request.POST['phone_number']
-            password = request.POST['password']
-            user = authenticate(phone_number=phone_number, password=password)
+        password = request.POST['password']
+        try:
+            users_id = Users.objects.get(phone_number__exact=request.POST['phone_number']).id
 
-            if user:
-                login(request, user)
-                user = Users.objects.get(phone_number=request.user.phone_number)
-                user.last_update = datetime.now()
-                user.last_login = datetime.now()
-                user.save()
+            user = authenticate(id=users_id, password=password)
 
-                request.session.set_expiry(2592000)
-                return redirect('main_url')
+        except ObjectDoesNotExist:
+            return render(request, 'azatAI/Login.html', context={'form': bound_form})
 
+        if user:
+            login(request, user)
+            user = Users.objects.get(phone_number=request.user.phone_number)
+            user.last_update = datetime.now()
+            user.last_login = datetime.now()
+            user.save()
+
+            request.session.set_expiry(2592000)
             return redirect('main_url')
+
 
         return render(request, 'azatAI/Login.html', context={'form': bound_form})
 
@@ -105,19 +108,18 @@ class Login(View):
         user = request.user
         if user.is_authenticated:
             return redirect('main_url')
-
         form = LogForm
+
         return render(request, 'azatAI/Login.html', context={'form': form})
+
 
 class Login_OBJ(View):
     def post(self, request):
         bound_form = LogForm_OBJ(request.POST)
-
         if bound_form.is_valid():
             id = request.POST['id']
             password = request.POST['password']
             user = authenticate(id=id, password=password)
-
             if user:
                 login(request, user)
                 user = Users.objects.get(id=request.user.id)

@@ -41,6 +41,10 @@
        USER: {{ request.user}}
     </p>
 
+     <p>
+       USER PHONE_NUMBER:  {{ request.user.phone_number }}
+    </p>
+
     <p>
        OS:   {{ os }}
     </p>
@@ -61,9 +65,7 @@
         DEVICE ID: {{ device_id }}
     </p>
 
-    <p>
-        {{ obb.password }}
-    </p>
+
 
 
 </body>
