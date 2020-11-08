@@ -14,11 +14,11 @@ class RegistrationForm(UserCreationForm):
         fields = ['phone_number', 'password1', 'password2']
 
 
-class RegistrationForm_OBJ(UserCreationForm):
+class RegistrationForm_OBJ(forms.ModelForm):
 
     class Meta:
         model = Users
-        fields = ['id', 'password1', 'password2']
+        fields = ['id',]
 
 
 class LogForm(forms.ModelForm):

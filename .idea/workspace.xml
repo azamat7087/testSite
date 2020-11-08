@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ab83c1e5-3331-4bc7-b24a-ef342a86b061" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/azatAI/templates/azatAI/Login_OBJ.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/azatAI/templates/azatAI/registration_obj.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/azatAI/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/azatAI/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/azatAI/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/azatAI/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/azatAI/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/azatAI/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/azatAI/templates/azatAI/Main.html" beforeDir="false" afterPath="$PROJECT_DIR$/azatAI/templates/azatAI/Main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/azatAI/templates/azatAI/registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/azatAI/templates/azatAI/registration.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/azatAI/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/azatAI/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/azatAI/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/azatAI/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/azatAI/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/azatAI/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,6 +144,7 @@
       <workItem from="1604567805576" duration="9255000" />
       <workItem from="1604633987014" duration="222000" />
       <workItem from="1604638888250" duration="2291000" />
+      <workItem from="1604815676247" duration="258000" />
     </task>
     <servers />
   </component>
@@ -172,22 +164,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="117" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1604569669025" />
-    <state width="1322" height="172" key="GridCell.Tab.0.bottom" timestamp="1604650775738">
+    <state width="1322" height="172" key="GridCell.Tab.0.bottom" timestamp="1604668514047">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="172" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1604650775738" />
-    <state width="1322" height="172" key="GridCell.Tab.0.center" timestamp="1604650775738">
+    <state width="1322" height="172" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1604668514047" />
+    <state width="1322" height="172" key="GridCell.Tab.0.center" timestamp="1604668514047">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="172" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1604650775738" />
-    <state width="1322" height="172" key="GridCell.Tab.0.left" timestamp="1604650775738">
+    <state width="1322" height="172" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1604668514047" />
+    <state width="1322" height="172" key="GridCell.Tab.0.left" timestamp="1604668514047">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="172" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1604650775738" />
-    <state width="1322" height="172" key="GridCell.Tab.0.right" timestamp="1604650775738">
+    <state width="1322" height="172" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1604668514047" />
+    <state width="1322" height="172" key="GridCell.Tab.0.right" timestamp="1604668514047">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="172" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1604650775738" />
+    <state width="1322" height="172" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1604668514047" />
     <state x="184" y="0" key="SettingsEditor" timestamp="1603858144339">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
