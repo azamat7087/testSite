@@ -64,3 +64,4 @@ class RegistrationMixin:
     def get(self, request):
         form = self.obj_form
         return render(request, self.template, context={'form': form, 'url': self.url})
+

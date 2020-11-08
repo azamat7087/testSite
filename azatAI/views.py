@@ -12,6 +12,7 @@ import re
 from .utils import *
 '''Functions'''
 
+
 def get_time_pass():
     time_pass = str(datetime.now())[14:16]
     time_pass += str(int(time_pass) + 1) + time_pass
@@ -108,6 +109,7 @@ class Login(View):
 
         form = LogForm
         return render(request, 'azatAI/Login.html', context={'form': form})
+
 
 class Login_OBJ(View):
     def post(self, request):
