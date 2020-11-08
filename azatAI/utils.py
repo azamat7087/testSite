@@ -37,7 +37,9 @@ class RegistrationMixin:
             obj_cleaned = bound_form.cleaned_data.get(f'{self.obj}')
             raw_password = bound_form.cleaned_data.get('password1')
             if str(self.obj) == 'phone_number':
-                account = authenticate(phone_number=obj_cleaned, password=raw_password)
+                user = Users.objects.get(phone_number=obj_cleaned)
+                account = authenticate(id=user.id, password=raw_password)
+
                 login(request, account)
                 ip = get_client_ip(request)
                 os = str(self.request.user_agent.os.family) + " " + str(self.request.user_agent.os.version_string)

@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="ab83c1e5-3331-4bc7-b24a-ef342a86b061" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/azatAI/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/azatAI/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azatAI/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/azatAI/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azatAI/templates/azatAI/Main.html" beforeDir="false" afterPath="$PROJECT_DIR$/azatAI/templates/azatAI/Main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azatAI/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/azatAI/utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +146,7 @@
       <workItem from="1604567805576" duration="9255000" />
       <workItem from="1604633987014" duration="222000" />
       <workItem from="1604638888250" duration="2291000" />
-      <workItem from="1604815676247" duration="258000" />
+      <workItem from="1604815676247" duration="934000" />
     </task>
     <servers />
   </component>
